@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Verity",
+  "version": "0.1",
+  "description": "Credibility checks for sponsored links",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["https://*/*"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup.html"
+  }
+}
